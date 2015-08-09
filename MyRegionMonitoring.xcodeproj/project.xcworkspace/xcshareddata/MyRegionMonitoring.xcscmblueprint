@@ -1,30 +1,30 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "63318159E6D302227F2E703F564C1A431A4BE9EF",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8FA75144F341ED7DE52AB5F0EE94B913F402A119",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "8124F4DDC5A9711EFDDA461D415EB06AEBC45068" : 0,
-    "63318159E6D302227F2E703F564C1A431A4BE9EF" : 0
+    "8FA75144F341ED7DE52AB5F0EE94B913F402A119" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6C7867DA-702E-4B9D-8C74-4505DF22D04E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "8124F4DDC5A9711EFDDA461D415EB06AEBC45068" : "MyUpload\/",
-    "63318159E6D302227F2E703F564C1A431A4BE9EF" : "MyRegionMonitoring\/"
+    "8FA75144F341ED7DE52AB5F0EE94B913F402A119" : "MyRegionMonitoring\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "MyRegionMonitoring",
-  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MyRegionMonitoring.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ooper-shlab\/MyRegionMonitoring-Swift.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "63318159E6D302227F2E703F564C1A431A4BE9EF"
-    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ooper-shlab\/MyUpload-Swift.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8124F4DDC5A9711EFDDA461D415EB06AEBC45068"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ooper-shlab\/MyRegionMonitoring-Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8FA75144F341ED7DE52AB5F0EE94B913F402A119"
     }
   ]
 }
