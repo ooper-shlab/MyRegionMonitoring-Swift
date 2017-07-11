@@ -14,7 +14,7 @@ import CoreLocation
 private let JS_LAT: CLLocationDegrees = 34.649394
 private let JS_LON: CLLocationDegrees = 135.001478
 
-private let REGION_RADIUS: CLLocationDistance = 200
+private let REGION_RADIUS: CLLocationDistance = 300
 private let coord: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: JS_LAT, longitude: JS_LON)
 private let FILTERED_DISTANCE: CLLocationDistance = 10
 private let ARRIVAL_DISTANCE: CLLocationDistance = 50
@@ -33,14 +33,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         locationManger.delegate = self
         
-        if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined {
+        if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.notDetermined {
             locationManger.requestAlwaysAuthorization()
         }
         
         if #available(iOS 9.0, *) {
             locationManger.allowsBackgroundLocationUpdates = true
         }
-        locationManger.startMonitoringForRegion(region)
+        locationManger.startMonitoring(for: region)
         
         locationManger.desiredAccuracy = kCLLocationAccuracyBest
         locationManger.distanceFilter = FILTERED_DISTANCE
@@ -52,36 +52,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        NSLog(__FUNCTION__)
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        NSLog(#function)
         locationManger.startUpdatingLocation()
     }
     
-    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        NSLog(__FUNCTION__)
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        NSLog(#function)
         locationManger.stopUpdatingLocation()
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             self.textField.text = "Exited"
         }
         notificationPresented = false
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        NSLog(__FUNCTION__)
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        NSLog(#function)
         if let location = locations.last {
-            if !self.region.containsCoordinate(location.coordinate) {
+            if !self.region.contains(location.coordinate) {
                 locationManger.stopUpdatingLocation()
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.textField.text = "Exited"
                 }
                 notificationPresented = false
-            } else {
-                if location.distanceFromLocation(CLLocation(latitude: JS_LAT, longitude: JS_LON)) < ARRIVAL_DISTANCE
-                    && !notificationPresented
-                {
+            } else if !notificationPresented {
+                if location.distance(from: CLLocation(latitude: JS_LAT, longitude: JS_LON)) < ARRIVAL_DISTANCE {
                     notificationPresented = true
-                    let message = "Arrived at \(region.identifier) on \(NSDate())"
-                    dispatch_async(dispatch_get_main_queue()) {
+                    let message = "Arrived at \(region.identifier) on \(Date())"
+                    DispatchQueue.main.async {
                         self.textField.text = message
                     }
                     
@@ -89,10 +87,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     localNotification.alertBody = message
                     localNotification.alertAction = "Arrived at destination!"
                     localNotification.hasAction = true
-                    UIApplication.sharedApplication().presentLocalNotificationNow(localNotification)
+                    UIApplication.shared.presentLocalNotificationNow(localNotification)
                 } else {
                     let message = "Near \(region.identifier)"
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         self.textField.text = message
                     }
                 }

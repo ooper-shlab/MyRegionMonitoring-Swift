@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D70BDBDC1B73869700C47220 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = D70BDBDA1B73869700C47220 /* LICENSE.txt */; };
-		D70BDBDD1B73869700C47220 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D70BDBDB1B73869700C47220 /* README.md */; };
 		D72182C31B722A4700397DC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72182C21B722A4700397DC0 /* AppDelegate.swift */; };
 		D72182C51B722A4700397DC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72182C41B722A4700397DC0 /* ViewController.swift */; };
 		D72182C81B722A4700397DC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D72182C61B722A4700397DC0 /* Main.storyboard */; };
@@ -96,11 +95,13 @@
 		D72182B71B722A4700397DC0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "OOPer (NAGATA, Atsuyuki)";
 				TargetAttributes = {
 					D72182BE1B722A4700397DC0 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -149,7 +150,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D70BDBDD1B73869700C47220 /* README.md in Sources */,
 				D72182C51B722A4700397DC0 /* ViewController.swift in Sources */,
 				D72182C31B722A4700397DC0 /* AppDelegate.swift in Sources */,
 			);
@@ -266,6 +266,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oopers.MyRegionMonitoring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -277,6 +278,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oopers.MyRegionMonitoring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
